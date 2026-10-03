@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root{font-family:'Manrope',sans-serif;color:#d9e7e5;background:#070d10;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-optical-sizing:auto;font-weight:500;--display:'Manrope',sans-serif;--body:'Manrope',sans-serif;--mono:'DM Mono',monospace;--bg:#070d10;--text-bright:#eaf5f2;--cyan:#63e4d6;--mint:#5bf0ce;--line:rgba(110,168,176,.17);--line-strong:rgba(112,191,195,.35);--muted:#718589;scroll-behavior:smooth;scroll-padding-top:90px}
+*{box-sizing:border-box}
+html{min-width:320px;background:var(--bg)}
+body{min-width:320px;margin:0;overflow-x:hidden;background:radial-gradient(ellipse at 50% -20%,rgba(33,73,80,.18),transparent 48%),var(--bg);color:#d9e7e5;font-size:14px}
+body:before{position:fixed;inset:0;z-index:-1;pointer-events:none;content:"";opacity:.18;background-image:radial-gradient(rgba(177,218,218,.28) .5px,transparent .6px);background-size:5px 5px;mask-image:linear-gradient(180deg,#000,transparent 88%)}
+button,input,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+::selection{color:#071012;background:#68ebd9}
+#root{min-height:100vh;isolation:isolate}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
