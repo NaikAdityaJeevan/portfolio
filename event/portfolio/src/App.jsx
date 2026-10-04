@@ -19,6 +19,262 @@ function ProjectArtwork({
 }) {
   return <div className={`project-art art-${project.id}`} aria-hidden="true"><div className="art-grid" />{project.id === 'air-mouse' && <div className="art-drone"><span /><i /><b /></div>}{project.id === 'carbot' && <div className="art-car"><span /><i /><b /><em /></div>}{project.id === 'optical-network' && <div className="art-network"><i /><i /><i /><b /><span /></div>}{project.id === 'civic-mysuru' && <div className="art-city"><i /><i /><i /><i /><b /></div>}<div className="art-coordinate">{project.number} / {project.type}</div><div className="art-scanline" /></div>;
 }
+const selectedSystemsProjects = [{
+  id: 'air-mouse',
+  number: '01',
+  name: 'AIR MOUSE',
+  title: 'AIR MOUSE',
+  subtitle: 'Autonomous GPS-Denied Indoor Search, Mapping & Survivor Localisation System',
+  description: 'Autonomous GPS-denied indoor search, mapping and survivor localisation system built around perception, planning and situational awareness.',
+  type: 'Autonomous Systems',
+  tags: ['SLAM', 'Autonomous Navigation', 'Thermal Imaging', 'RGB Vision', 'Computer Vision'],
+  technologies: ['SLAM', 'Autonomous Navigation', 'Thermal Imaging', 'RGB Vision', 'Computer Vision', 'AI', 'NVIDIA Jetson Orin Nano'],
+  problem: 'The mission objective was to localise survivors and map unknown indoor spaces without GPS, even in degraded visibility conditions.',
+  solution: 'A multi-sensor autonomous stack combining visual odometry, thermal perception, mapping and exploration logic for robust indoor operation.',
+  architecture: 'Feature extraction, occupancy mapping, navigation planning, local path execution and sensor fusion across RGB and thermal inputs.',
+  contribution: 'I helped define the perception and navigation workflow, sensor integration strategy and system-level testing for autonomous field operations.',
+  results: 'The system is designed to improve situational awareness and exploration effectiveness in GPS-denied environments.',
+  gallery: 'Sensor imagery, mapping overlays and field deployment visuals to be added.',
+  variant: 'large'
+}, {
+  id: 'carbot',
+  number: '02',
+  name: 'CARBOT',
+  title: 'CARBOT',
+  subtitle: '',
+  description: 'Smart automotive assistant for vehicle management, predictive maintenance guidance and service assistance.',
+  type: 'Automotive Intelligence',
+  tags: ['Vehicle Management', 'Engine Health Prediction', 'Nearby Workshops', 'Automotive Intelligence', 'Car Parts Assistance'],
+  technologies: ['Vehicle Management', 'Engine Health Prediction', 'Nearby Workshops', 'Automotive Intelligence', 'Car Parts Assistance'],
+  problem: 'Drivers often lack intelligent support for service planning, vehicle diagnostics and workshop discovery while on the road.',
+  solution: 'A system to assist users with vehicle health awareness, route-aware workshop suggestions and practical automotive guidance.',
+  architecture: 'Vehicle data interpretation, service recommendation logic and user-facing guidance layers.',
+  contribution: 'The platform concept and information architecture were shaped around practical automotive assistance and decision support.',
+  results: 'The design emphasises convenience, reliability and faster maintenance decision-making for vehicle owners.',
+  gallery: 'Concept visuals and workflow diagrams to be added.',
+  variant: 'medium'
+}, {
+  id: 'optical-network',
+  number: '03',
+  name: '3-LAYER OPTICAL NETWORK',
+  title: '3-LAYER OPTICAL NETWORK',
+  subtitle: 'Self-healing Optical Communication Network',
+  description: 'A proposed architecture for a resilient optical communication network spanning access, aggregation and core layers.',
+  type: 'Communication Networks',
+  tags: ['DWDM', 'Optical Ring', 'PON', 'Single Mode Fiber', 'APS'],
+  technologies: ['DWDM', 'Optical Ring', 'PON', 'Single Mode Fiber', 'APS', 'Traffic Control Centre', 'Zonal Hubs / POPs'],
+  problem: 'High-capacity fibre networks require resilience, efficient traffic routing and self-healing behaviour under disruptions.',
+  solution: 'A layered optical network model that distributes traffic across ring and hub architectures with protection switching.',
+  architecture: 'Access layer, aggregation layer and core layer coordination with zonal hubs and APS-based recovery flows.',
+  contribution: 'The network architecture was developed around scalable communication design and resilience-driven topology planning.',
+  results: 'The proposed model focuses on fault tolerance and long-haul communication efficiency.',
+  gallery: 'Maps, topologies and optical layer diagrams to be added.',
+  variant: 'large'
+}, {
+  id: 'civic-mysuru',
+  number: '04',
+  name: 'CIVIC MYSURU',
+  title: 'CIVIC MYSURU',
+  subtitle: '',
+  description: 'Technology-driven civic governance and clean-city management platform designed to improve accountability in urban operations.',
+  type: 'Connected Cities',
+  tags: ['Civic Governance', 'Smart City', 'Clean-City Management'],
+  technologies: ['Civic Governance', 'Clean-City Management', 'Smart City'],
+  problem: 'Urban governance systems need transparent monitoring and timely action for civic service improvement.',
+  solution: 'A civic technology concept for tracking urban operations, service responsiveness and city cleanliness workflows.',
+  architecture: 'Operational dashboards, data layers and service reporting workflows connected to urban governance decisions.',
+  contribution: 'The project focused on structured civic technology thinking, service design and operational visibility.',
+  results: 'The framework prioritises transparency, accountability and service delivery efficiency in city systems.',
+  gallery: 'Smart-city interface and civic dashboards to be added.',
+  variant: 'medium'
+}, {
+  id: 'sarvagya',
+  number: '05',
+  name: 'SARVAGYA',
+  title: 'SARVAGYA',
+  subtitle: 'AI-Based Agriculture Robot',
+  description: 'An intelligent agricultural robotics system designed to assist with autonomous operations using AI, robotics and computer vision.',
+  type: 'Agricultural Robotics',
+  tags: ['AI', 'Agricultural Robotics', 'Computer Vision', 'Autonomous Systems', 'Robotics'],
+  technologies: ['AI', 'Agricultural Robotics', 'Computer Vision', 'Autonomous Systems', 'Robotics'],
+  problem: 'Precision agriculture requires autonomous perception and navigation in dynamic crop environments.',
+  solution: 'A field robot concept that combines machine vision, navigation and task automation for agricultural workflows.',
+  architecture: 'Vision-guided perception, movement planning, crop-row localisation and autonomous task execution logic.',
+  contribution: 'The system concept centred on autonomous agricultural operations using embedded sensing and AI-based perception.',
+  results: 'The design supports efficient and safer agricultural automation in complex operating conditions.',
+  gallery: 'Agricultural robot sketches and field operation visualisations to be added.',
+  variant: 'large'
+}, {
+  id: 'robot-arm',
+  number: '06',
+  name: '5-DOF ROBOTIC ARM',
+  title: '5-DOF ROBOTIC ARM',
+  subtitle: 'Inverse Kinematics',
+  description: 'A 5-degree-of-freedom robotic arm controlled using inverse kinematics for accurate motion planning and execution.',
+  type: 'Robotics',
+  tags: ['Robotics', 'Inverse Kinematics', '5-DOF', 'Motion Planning', 'Control Systems'],
+  technologies: ['Robotics', 'Inverse Kinematics', '5-DOF', 'Motion Planning', 'Control Systems'],
+  problem: 'Precise positioning in robotic manipulation needs accurate joint control and kinematic resolution.',
+  solution: 'A kinematics-driven control framework for planning and executing accurate arm trajectory movements.',
+  architecture: 'Joint-space and Cartesian-space control with inverse kinematics mapping and motion planning logic.',
+  contribution: 'The arm model focused on how reachability, trajectory control and kinematic accuracy translate from theory to practice.',
+  results: 'The design supports stable and accurate controlled motion for engineered manipulation tasks.',
+  gallery: 'Arm geometry diagrams and motion frames to be added.',
+  variant: 'medium'
+}, {
+  id: 'cyclofusion-net',
+  number: '07',
+  name: 'CYCLOFUSION-NET',
+  title: 'CYCLOFUSION-NET',
+  subtitle: '',
+  description: 'A computer vision and perception system focused on multimodal visual information fusion for robust scene understanding.',
+  type: 'Perception Systems',
+  tags: ['Computer Vision', 'Deep Learning', 'Sensor Fusion', 'AI'],
+  technologies: ['Computer Vision', 'Deep Learning', 'Sensor Fusion', 'AI'],
+  problem: 'Scene understanding becomes more reliable when multi-source visual information is fused into one consistent representation.',
+  solution: 'A fusion-focused AI perception approach that combines complementary visual signals into a richer understanding model.',
+  architecture: 'Feature extraction, modality fusion, perception filtering and robust downstream inference.',
+  contribution: 'The concept centred on perception architecture design and feature-level integration for intelligent scene reasoning.',
+  results: 'The system aims to improve robustness and information completeness in computer vision tasks.',
+  gallery: 'Multimodal sensor diagrams and perception flow visuals to be added.',
+  variant: 'large'
+}, {
+  id: 'more-systems',
+  number: '08',
+  name: 'MORE SYSTEMS',
+  title: 'MORE SYSTEMS',
+  subtitle: 'COMING SOON',
+  description: 'More autonomous systems, robotics and AI projects are currently being developed in this portfolio pipeline.',
+  type: 'Future Systems',
+  tags: ['Robotics', 'AI', 'Autonomy', 'Research'],
+  technologies: ['Robotics', 'AI', 'Autonomy', 'Research'],
+  problem: 'The portfolio is growing with new research directions and system prototypes still in development.',
+  solution: 'A teaser section highlighting future autonomous robotics and AI work currently under active progress.',
+  architecture: 'Pipeline of prototypes, systems and research exploration underway for upcoming portfolio additions.',
+  contribution: 'This tile signals future technical directions and active portfolio expansion.',
+  results: 'It acts as a forward-looking teaser for upcoming systems across autonomous robotics and intelligence.',
+  gallery: 'Future system visual concepts to be added.',
+  variant: 'medium'
+}];
+function ProjectShowcaseVisual({
+  project
+}) {
+  return <div className={`project-showcase-visual visual-${project.id}`} aria-hidden="true"><span className="visual-grid" /><span className="visual-badge">{project.number}</span><span className="visual-arc arc-one" /><span className="visual-arc arc-two" /><span className="visual-core" /></div>;
+}
+function ProjectsHorizontalGallery({
+  onSelectProject
+}) {
+  const galleryRef = useRef(null);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+  const dragState = useRef({
+    dragging: false,
+    startX: 0,
+    startScrollLeft: 0
+  });
+  const updateScrollState = () => {
+    const element = galleryRef.current;
+    if (!element) return;
+    const maxScroll = element.scrollWidth - element.clientWidth;
+    setIsAtStart(element.scrollLeft <= 8);
+    setIsAtEnd(element.scrollLeft >= maxScroll - 8);
+  };
+  const scrollGallery = direction => {
+    const element = galleryRef.current;
+    if (!element) return;
+    const firstCard = element.querySelector('.project-panel');
+    const scrollStep = firstCard ? firstCard.getBoundingClientRect().width + 28 : 420;
+    element.scrollTo({
+      left: element.scrollLeft + direction * scrollStep,
+      behavior: 'smooth'
+    });
+  };
+  const handleWheel = event => {
+    const element = galleryRef.current;
+    if (!element) return;
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey) {
+      event.preventDefault();
+      element.scrollTo({
+        left: element.scrollLeft + event.deltaX + event.deltaY * 0.55,
+        behavior: 'auto'
+      });
+      return;
+    }
+    if (Math.abs(event.deltaY) > 0) {
+      event.preventDefault();
+      element.scrollTo({
+        left: element.scrollLeft + event.deltaY * 1.2,
+        behavior: 'auto'
+      });
+    }
+  };
+  const handlePointerDown = event => {
+    const element = galleryRef.current;
+    if (!element) return;
+    dragState.current = {
+      dragging: true,
+      startX: event.clientX,
+      startScrollLeft: element.scrollLeft
+    };
+    element.setPointerCapture(event.pointerId);
+    element.classList.add('is-dragging');
+  };
+  const handlePointerMove = event => {
+    const element = galleryRef.current;
+    if (!dragState.current.dragging || !element) return;
+    const delta = event.clientX - dragState.current.startX;
+    element.scrollLeft = dragState.current.startScrollLeft - delta;
+  };
+  const handlePointerUp = event => {
+    const element = galleryRef.current;
+    if (!element) return;
+    dragState.current.dragging = false;
+    element.releasePointerCapture?.(event.pointerId);
+    element.classList.remove('is-dragging');
+    updateScrollState();
+  };
+  useEffect(() => {
+    updateScrollState();
+    const handler = () => updateScrollState();
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+  useEffect(() => {
+    const onKeyDown = event => {
+      const tagName = document.activeElement && document.activeElement.tagName;
+      if (tagName === 'INPUT' || tagName === 'TEXTAREA' || tagName === 'SELECT') return;
+      if (event.key === 'ArrowRight' || event.key === 'PageDown') {
+        event.preventDefault();
+        scrollGallery(1);
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+        event.preventDefault();
+        scrollGallery(-1);
+      }
+      if (event.key === 'Home') {
+        event.preventDefault();
+        const element = galleryRef.current;
+        if (element) element.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+      if (event.key === 'End') {
+        event.preventDefault();
+        const element = galleryRef.current;
+        if (element) element.scrollTo({ left: element.scrollWidth, behavior: 'smooth' });
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+  return <div className="projects-showcase-shell"><div className="projects-gallery-controls">{!isAtStart && <button type="button" className="gallery-nav-button" aria-label="Scroll to previous project" onClick={() => scrollGallery(-1)}>←</button>}<button type="button" className="gallery-scroll-button" aria-label={isAtEnd ? 'Restart project gallery' : 'Scroll to next project'} onClick={() => {
+        const element = galleryRef.current;
+        if (!element) return;
+        if (isAtEnd) {
+          element.scrollTo({ left: 0, behavior: 'smooth' });
+          return;
+        }
+        scrollGallery(1);
+      }}>{isAtEnd ? 'RESTART →' : 'SCROLL →'}</button></div><div className="projects-scrollview" ref={galleryRef} onWheel={handleWheel} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerLeave={handlePointerUp} onScroll={updateScrollState} role="region" aria-label="Selected systems project gallery" tabIndex={0}>{selectedSystemsProjects.map(project => <article key={project.id} className={`project-panel ${project.variant === 'large' ? 'is-large' : 'is-medium'}`}><ProjectShowcaseVisual project={project} /><div className="project-panel-copy"><div className="project-panel-topline"><span>{project.number}</span><span>{project.type}</span></div><h3>{project.title}</h3>{project.subtitle && <p className="project-panel-subtitle">{project.subtitle}</p>}<p className="project-panel-description">{project.description}</p><div className="project-panel-tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div><button type="button" className="project-panel-link" aria-label={`View project ${project.title}`} onClick={() => onSelectProject(project)}>VIEW PROJECT <ArrowUpRight size={14} /></button></div></article>)}</div></div>;
+}
 function AboutLidarGraphic() {
   const container = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -154,11 +410,9 @@ function StackedCardCarousel() {
 function App() {
   const [activeSkill, setActiveSkill] = useState(skills[0].category);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formStatus, setFormStatus] = useState('');
   const [activeSection, setActiveSection] = useState('home');
-  const projectWheelFrame = useRef(null);
   const activeSkillGroup = skills.find(group => group.category === activeSkill) ?? skills[0];
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -203,25 +457,6 @@ function App() {
     window.location.href = `mailto:${portfolio.email}?subject=${subject}&body=${body}`;
     setFormStatus('Your email app is ready with this message.');
   };
-  const handleProjectWheel = event => {
-    event.preventDefault();
-    if (Math.abs(event.deltaY) < 1) return;
-    if (projectWheelFrame.current) return;
-
-    const direction = event.deltaY > 0 ? 1 : -1;
-    projectWheelFrame.current = requestAnimationFrame(() => {
-      projectWheelFrame.current = null;
-      setSelectedProject(null);
-      setActiveProjectIndex(current => {
-        if (direction > 0) return Math.min(current + 1, projects.length - 1);
-        return Math.max(current - 1, 0);
-      });
-    });
-  };
-
-  useEffect(() => () => {
-    if (projectWheelFrame.current) cancelAnimationFrame(projectWheelFrame.current);
-  }, []);
   return <>
     <div className="ambient-grid" aria-hidden="true" />
     <header className="topbar"><a href="#home" className="wordmark" aria-label="Aditya Jeevan Naik home"><span className="wordmark-icon"><Cpu size={15} /></span><span>AJN<span className="wordmark-dot">.</span></span><small>ECE / SYSTEMS</small></a><nav className={`main-nav ${menuOpen ? 'nav-open' : ''}`} aria-label="Main navigation">{navigation.map(([label, id]) => <a key={id} className={activeSection === id ? 'nav-active' : ''} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}</nav><a className="top-contact" href="#contact"><span className="online-dot" /> AVAILABLE FOR COLLABORATION</a><button className="menu-toggle icon-button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button></header>
@@ -247,46 +482,7 @@ function App() {
                   delay: index * 0.035
                 }}><Check size={12} />{skill}</motion.span>)}</div></div></div><div className="skills-diagram"><div className="diagram-orbit orbit-a" /><div className="diagram-orbit orbit-b" /><div className="diagram-core"><Cpu size={29} /><span>ECE</span></div><div className="diagram-label diagram-label-a">HARDWARE <span>01</span></div><div className="diagram-label diagram-label-b">SIGNAL <span>02</span></div><div className="diagram-label diagram-label-c">INTELLIGENCE <span>03</span></div><div className="diagram-label diagram-label-d">AUTONOMY <span>04</span></div><div className="diagram-node node-a" /><div className="diagram-node node-b" /><div className="diagram-node node-c" /></div></div></section>
 
-      <section id="projects" className="content-section projects-section"><SectionHeading index="03" eyebrow="SELECTED SYSTEMS" title="FROM SIGNAL TO SOMETHING REAL." /><div className="projects-showcase-shell" onWheel={handleProjectWheel}>
-          <div className="projects-index" aria-label="Project index">
-            {projects.map((project, index) => <button key={project.id} type="button" className={`projects-index-item ${index === activeProjectIndex ? 'active' : ''}`} onClick={() => setActiveProjectIndex(index)}>
-                <span className="project-index-number">{project.number}</span>
-                <span className="project-index-name">{project.name}</span>
-              </button>)}
-          </div>
-          <div className="projects-showcase" aria-live="polite">
-            <div className="projects-showcase-stage">
-              {projects.map((project, index) => {
-                const offset = index - activeProjectIndex;
-                const absOffset = Math.abs(offset);
-                const active = index === activeProjectIndex;
-                const visible = absOffset <= 3;
-                if (!visible) return null;
-                return <motion.article key={project.id} className={`project-show-card ${active ? 'is-active' : ''}`} initial={false} animate={{
-                    x: active ? 0 : offset * 48,
-                    y: active ? 0 : offset * 62,
-                    scale: active ? 1 : 1 - absOffset * 0.12,
-                    rotateY: active ? 0 : offset * 10,
-                    rotateX: active ? 0 : offset * -2,
-                    opacity: active ? 1 : Math.max(0.18, 1 - absOffset * 0.25),
-                    filter: `blur(${Math.max(0, absOffset - 0.5) * 2.5}px)`,
-                    z: active ? 0 : -absOffset * 180
-                  }} transition={{
-                    type: 'spring',
-                    stiffness: 120,
-                    damping: 22,
-                    mass: 0.9
-                  }} style={{
-                    zIndex: 100 - absOffset,
-                    transformPerspective: 1600
-                  }}><div className="project-show-visual"><ProjectArtwork project={project} /></div>{!active && <div className="project-show-mini"><span>{project.number}</span><strong>{project.name}</strong></div>}{active && <div className="project-show-content"><div className="project-show-meta"><span>{project.number}</span><span>{project.type}</span></div><h3>{project.name}</h3><p>{project.title}</p><div className="project-show-tags">{project.technologies.slice(0, 5).map(technology => <span key={technology}>{technology}</span>)}</div><button type="button" className="project-show-action" onClick={() => setSelectedProject(project)}>VIEW PROJECT <ArrowUpRight size={15} /></button></div>}</motion.article>;
-              })}
-            </div>
-          </div>
-          <div className="projects-progress" aria-label="Project progress">
-            {projects.map((project, index) => <button key={`${project.id}-progress`} type="button" className={`projects-progress-item ${index === activeProjectIndex ? 'active' : ''}`} onClick={() => setActiveProjectIndex(index)} aria-label={`View ${project.name}`} />)}
-          </div>
-        </div></section>
+      <section id="projects" className="content-section projects-section"><SectionHeading index="03" eyebrow="SELECTED SYSTEMS" title="FROM SIGNAL TO SOMETHING REAL." /><ProjectsHorizontalGallery onSelectProject={setSelectedProject} /></section>
 
       <section id="journey" className="content-section journey-section"><SectionHeading index="04" eyebrow="FIELD NOTES" title="A JOURNEY IN PROGRESS." /><div className="journey-layout"><div className="journey-intro reveal"><span className="terminal-prompt">log --follow / life</span><p>Each milestone will be documented here as it happens. The timeline is intentionally open-ended.</p><div className="journey-stamp"><span>STATUS</span><b>ONGOING</b><i /></div></div><div className="timeline">{journey.map((item, index) => <div className="timeline-row reveal" key={item}><div className="timeline-node"><span>{String(index + 1).padStart(2, '0')}</span></div><div className="timeline-entry"><h3>{item}</h3><span>ENTRY AWAITING DETAILS</span></div><ChevronRight size={16} /></div>)}</div></div></section>
 
